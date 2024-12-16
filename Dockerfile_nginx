@@ -1,0 +1,14 @@
+FROM nginx:alpine
+
+# copy local repo index.html to the share folder in the nginx container that can serve it
+COPY nginx_demo_index.html /usr/share/nginx/html/index.html
+
+# Usage:
+
+# BUILD
+# docker build -t nginx_test_app -f Dockerfile_nginx .
+
+# RUN
+# docker run -it --rm -d -p 8080:80 --name nginx_demo nginx_test_app
+# http://localhost:8080/index.html
+# Hello, World

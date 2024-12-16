@@ -12,6 +12,15 @@
 
 # Probe the Elixir is working by doing iex for an iex session!
 
+# To do the bootstrapping, we need to get phx_new to do a new phoenix app:
+# mix archive.install hex phx_new
+
+# Then to install: mix phx.new no_ecto_test --no-ecto 
+# cd no_ecto_test
+# mix phx.server
+# port not working (yet?)
+
+
 FROM elixir:latest
 
 # Install dependencies

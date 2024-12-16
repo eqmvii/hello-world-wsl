@@ -1,5 +1,17 @@
 # Spat out by ChatGPT, because fuck it we live in the future
 
+# Testing Commands
+
+# Build it:
+
+# docker build -t phoenix_test_app -f Dockerfile_Phoenix_Test .
+
+# Do a quick test via just a bash prompt:
+
+# docker run --rm -it phoenix_test_app /bin/bash
+
+# Probe the Elixir is working by doing iex for an iex session!
+
 FROM elixir:latest
 
 # Install dependencies
@@ -22,13 +34,16 @@ WORKDIR /app
 COPY . .
 
 # Install Elixir dependencies
-RUN mix deps.get
+# RUN mix deps.get
 
 # Compile the application
-RUN mix compile
+# RUN mix compile
 
 # Expose the port Phoenix will run on
 EXPOSE 4000
 
 # Set the default command to run the Phoenix server
-CMD ["mix", "phx.server"]
+# CMD ["mix", "phx.server"]
+
+# Run the container with bash to bootstrap things
+CMD ["/bin/bash"]

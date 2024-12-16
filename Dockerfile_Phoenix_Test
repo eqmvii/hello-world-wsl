@@ -1,0 +1,34 @@
+# Spat out by ChatGPT, because fuck it we live in the future
+
+FROM elixir:latest
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    inotify-tools \
+    postgresql-client \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Hex and Rebar
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+# Set working directory
+WORKDIR /app
+
+# Copy the application files to the working directory
+COPY . .
+
+# Install Elixir dependencies
+RUN mix deps.get
+
+# Compile the application
+RUN mix compile
+
+# Expose the port Phoenix will run on
+EXPOSE 4000
+
+# Set the default command to run the Phoenix server
+CMD ["mix", "phx.server"]

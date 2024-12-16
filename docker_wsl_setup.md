@@ -6,6 +6,9 @@ Ensure during setup WSL is installed (done) and install if needed
 
 Settings From the General tab, select Use WSL 2 based engine.
 
+## Test it
+
 To test docker instalation from WSL:
 
-docker run --rm -it python:latest python 
+`docker run --rm -it python:latest python`
+

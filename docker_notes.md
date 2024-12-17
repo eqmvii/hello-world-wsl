@@ -9,3 +9,7 @@ docker run --rm -it phoenix_test_app /bin/bash
 # List built / downloaded images
 
 # docker image list
+
+# Stop all running docker containers (fast!)
+
+docker stop $(docker ps -q)

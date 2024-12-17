@@ -37,3 +37,6 @@ npm-debug.log
 
 # Local files with credentials
 secret/
+
+# aws config backup
+aws_config_backup/
